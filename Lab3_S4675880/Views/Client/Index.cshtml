@@ -1,0 +1,86 @@
+﻿<!----------------------------
+This View is for the Client
+----------------------------->
+
+@model IEnumerable<Lab3_S4675880.Models.ClientModel>
+
+@{
+    ViewData["Title"] = "Client Page";
+}
+
+<!-- Heading with css -->
+<h1 class="display-4">Client List</h1>
+<p>Listed below are the clients and their details</p>
+
+<!-- Button for Creating New Client -->
+<p>
+    <a asp-action="Create"><input type="button" value="Create New" class="btn btn-primary" /></a>
+</p>
+
+<!-- Table for Client List -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Subscription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Discount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subscription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ClientId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ClientId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ClientId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

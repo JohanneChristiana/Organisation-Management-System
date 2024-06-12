@@ -1,0 +1,62 @@
+﻿<!----------------------------
+This View is for the Manager
+----------------------------->
+
+@model IEnumerable<Lab3_S4675880.Models.ManagerModel>
+
+@{
+    ViewData["Title"] = "Manager Page";
+}
+
+<!-- Heading with css -->
+<h1 class="display-4">Manager List</h1>
+<p>Listed below are the managers and their details</p>
+
+<!-- Button for Creating New Manager -->
+<p>
+    <a asp-action="Create"><input type="button" value="Create New" class="btn btn-primary" /></a>
+</p>
+
+<!-- Table for Manager List -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ManagerId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ManagerId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ManagerId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

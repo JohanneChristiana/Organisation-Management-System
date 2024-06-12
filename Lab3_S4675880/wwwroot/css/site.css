@@ -1,0 +1,85 @@
+/* The CSS's purpose is for the appearance and design of the website. */
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* Logo style */
+.logo-image {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -6px;
+}
+
+/*-------------Navigation bar style-------------*/
+.nav-item a {
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif: medium;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 4px;
+    border-bottom: 3px solid transparent;
+}
+
+/* When hovering over a nav */
+ .nav-item a:hover {
+    border-bottom: 3px solid #BD6513;
+    margin-top: 4px;
+ }
+
+/* Active for each nav */
+.nav-item a:is(:link, :active, :visited).active {
+    border-bottom: 3px solid #BD6513;
+    margin-top: 4px;
+}
+
+
+/*-------------Format for all-------------*/
+.text-design, .navbar-brand {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*Change table bg color*/
+.table {
+    background-color: #F8F7F5;
+}
+
+/*Change button bg color*/
+.btn.btn-primary {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #BD6513;
+}
+
+/* When hovering over button */
+.btn.btn-primary:hover {
+    color: #BD6513;
+    background-color: white;
+    border: 2px solid #BD6513;
+}
+
+.display-4 {
+    color: #BD6513;
+    text-shadow: 1px 1px 1px #703D0E;
+}
